@@ -11,6 +11,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.sun.javafx.PlatformUtil;
 
+/*
+ *this class contains all the method that are used or might be use in test classes 
+ */
 public class BaseClass {
 	public WebDriver driver = null;
 
@@ -31,6 +34,11 @@ public class BaseClass {
 		}
 	}
 
+	/*
+	 * changed the return type of the method to webDriver
+	 * initials the chormeDriver
+	 * return the driver
+	 */
 	public WebDriver setDriverPath() {
 		if (PlatformUtil.isMac()) {
 			System.setProperty("webdriver.chrome.driver", "chromedriver");
@@ -45,6 +53,11 @@ public class BaseClass {
 		return driver;
 	}
 
+	/*
+	 * this method accept two parameter one is the locator and second the type of locator
+	 * according to the locator type appropriate explicit wait will be selected
+	 * this method will wait for 20 second for a element to be visible on web page
+	 */
 	public void waitElementToBeVisible(String e, String locator) {
 		if (locator == "css") {
 			WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -56,6 +69,10 @@ public class BaseClass {
 		}
 	}
 
+	/*/
+	 * This method will select the current date from the calendar
+	 * this resolve the static reference to the calendar date
+	 */
 	public void selectDate() {
 
 		Date currentDate = new Date();

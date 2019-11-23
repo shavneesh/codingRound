@@ -27,6 +27,8 @@ public class HotelBookingTest extends BaseClass {
 	@Test
 	public void shouldBeAbleToSearchForHotels() {
 		setDriverPath();
+		
+		//initials the webelemnt for page object model
 		PageFactory.initElements(driver, this);
 
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
